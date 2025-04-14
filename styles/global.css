@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #000000;
+    --font-family:  'Archive', sans-serif;
+    --text: 16px/150% var(--font-family);
+}
+
+body {
+    background-color: var(--background-color);
+}
