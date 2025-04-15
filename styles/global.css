@@ -9,6 +9,7 @@
     --font-family:  'Archive', sans-serif;
     --font-size: 1rem;
     --text: var(--font-size)/150% var(--font-family);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,7 +49,7 @@ header {
 
   .container {
     margin-top: 6.25rem; 
-    padding: 5% 10%;
+    padding: 5% 7%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -87,7 +88,9 @@ header {
   line-height: 1.6;
   margin-bottom: 1rem;
   text-align: left;
+
 }
+
 .saiba-mais-btn {
     display: inline-block;
     background-color: #BD00FF;
@@ -106,7 +109,7 @@ header {
 }
 
 .rotacao-main {
-    padding: 2rem 10%;
+    padding: 2rem 5%;
     max-width: 100%;
     margin: 6.25rem auto 0;
     text-align: left;
@@ -119,25 +122,70 @@ header {
 
 .rotacao-content h1 {
     color: #0070C0;
-    font-size: 2.2rem;
     margin-bottom: 1.5rem;
     text-align: left;
 }
-
-.rotacao-content h2 {
-    color: #0070C0;
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
-    text-align: left;
+.rotacao-content p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 0;
 }
 
-.rotacao-content p, .rotacao-content ul, .rotacao-content li {
-    color: #ffffff;
-    text-align: left;
-    margin-left: 0;
+.beneficios-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: space-around;
 }
 
-.rotacao-content ul {
-  list-style-position: outside;
-  padding-left: 1rem;
+.imagem-beneficios {
+  max-width: 40%;
+  margin-right: 2rem;
+}
+
+.beneficios-section {
+  max-width: 50%;
+  padding: 1.5rem 0;
+  text-align: left;
+  color: #0070C0;
+  flex: 1;
+}
+
+.beneficios-section h2 {
+  color: #0070C0;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.beneficios-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.beneficios-section ul {
+  font-size: 1.1rem;
+  color: #ffffff;
+  list-style-position: inside;
+  padding-left: 0;
+  text-align: left;
+}
+
+.beneficios-section li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.content-section {
+  min-height: 100vh;
+  padding: 7rem 5% 3rem;
+  color: white;
+}
+
+.content-section h2 {
+  color: #0070C0;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
