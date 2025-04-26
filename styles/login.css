@@ -13,7 +13,7 @@
 }
 
 body {
-    background: #e2e2e5; 
+    background: #e2e2e5;
     font-family: 'Inter UI', sans-serif;
     margin: 0;
     padding: 20px;
@@ -31,7 +31,7 @@ body {
 
 .container {
     display: flex;
-    height: 320px;
+    height: 350px;
     margin: 0 auto;
     width: 640px;
 }
@@ -113,6 +113,7 @@ input::-moz-focus-inner {
 #submit {
     color: #707075;
     margin-top: 40px;
+    cursor: pointer;
     transition: color 300ms;
 }
 
@@ -123,3 +124,47 @@ input::-moz-focus-inner {
 #submit:active {
     color: #d0d0d2;
 }
+
+.extra-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões */
+    margin-top: 285px;
+}
+
+.btn {
+    background: transparent;
+    color: #707075;
+    flex: 0.3;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Deixa o hover suave */
+}
+
+.btn:hover {
+    background: linear-gradient(500deg, #9c00d4, #5300cf);
+    color: white;
+    transform: scale(1.1);  /* Aumenta o botão no hover */
+    box-shadow: 0px 4px 15px rgba(189, 0, 255, 0.5);  /* Efeito de sombra */
+}
+
+.btn:focus {
+    outline: none; /* Tira o contorno padrão do navegador */
+    background: linear-gradient(45deg, #BD00FF, #6600ff);
+    color: white;
+    transform: scale(1.05);
+}
+
+.accenture {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .accenture img {
+    width: 10rem; /* Ajuste o tamanho */
+    height: auto; /* Mantém a proporção correta da imagem */
+  }
