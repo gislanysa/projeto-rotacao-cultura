@@ -16,7 +16,10 @@ document.querySelector('#email').addEventListener('mouseenter', function(e) {
     }
   });
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19cfe7024da32ca57101f67703745c89fda54613
 document.querySelector('#email').addEventListener('focus', function(e) {
   if (current) current.pause();
   current = anime({
@@ -33,7 +36,10 @@ document.querySelector('#email').addEventListener('focus', function(e) {
     }
   });
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19cfe7024da32ca57101f67703745c89fda54613
 document.querySelector('#password').addEventListener('mouseenter', function(e) {
   if (current) current.pause();
   current = anime({
@@ -50,7 +56,10 @@ document.querySelector('#password').addEventListener('mouseenter', function(e) {
     }
   });
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 19cfe7024da32ca57101f67703745c89fda54613
 document.querySelector('#password').addEventListener('focus', function(e) {
   if (current) current.pause();
   current = anime({
