@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro</title>
@@ -17,7 +17,6 @@
                 <div class="eula">O projeto Rotação de Cultura é uma iniciativa inovadora que visa otimizar o cultivo agrícola por meio da aplicação de técnicas avançadas.</div>
             </div>
             <!--
-            
                 <svg viewBox="0 0 320 300">
                     <defs>
                         <linearGradient inkscape:collect="always" id="linearGradient" x1="13" y1="193.49992" x2="307"
@@ -32,7 +31,7 @@
                 </svg>
             -->
             <div class="right">
-                <div class="form">
+                <form id="form-inicial">
                     <label for="firstname">Primeiro nome</label>
                     <input type="text" id="firstname">
                     <label for="lastname">Ultimo nome</label>
@@ -40,9 +39,24 @@
                     <label for="email">Email</label>
                     <input type="text" id="email">
                     <label for="phone">Telefone</label>
-                    <input type="password" id="phone">
-                    <input type="submit" id="submit" value="Entrar">
-                </div>
+                    <input type="text" id="phone">
+                    
+                    <button type="button" class="btn" onclick="nextForm()">Próximo</button>
+                </form>
+
+                <form id="form-final" class="form-secun-backward">
+                    <label for="datanasc">Data de nascimento</label>
+                    <input type="date" id="datanasc">
+                    <label for="senha">Crie sua senha</label>
+                    <input type="password" id="senha">
+                    <button type="button" class="mostrarsenha"></button>
+                    <label for="confirmsenha">Confirme sua senha</label>
+                    <input type="password" id="confirmsenha">
+                    <button type="button" class="mostrarsenha"></button>
+
+                    <button type="button" class="btn" onclick="backForm()">Anterior</button>
+                    <input type="submit" class="next-button" value="Entrar">
+                </form>
             </div>
         </div>
     </div>

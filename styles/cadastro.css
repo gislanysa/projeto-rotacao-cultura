@@ -41,6 +41,7 @@ body {
     height: calc(100% - 40px);
     top: 20px;
     position: relative;
+    z-index: 1;
     width: 50%;
 }
 
@@ -60,6 +61,8 @@ body {
 
 .right {
     background: #474A59;
+    padding: 15px;
+    padding-bottom: 20px;
     box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
     color: #F1F1F2;
     border-radius: 8px;
@@ -115,19 +118,58 @@ input::-moz-focus-inner {
     border: 0;
 }
 
-#submit {
+.next-button {
     color: #707075;
     margin-top: 40px;
     cursor: pointer;
     transition: color 300ms;
 }
 
-#submit:focus {
+.next-button:focus {
     color: #f2f2f2;
 }
 
-#submit:active {
+.next-button:active {
     color: #d0d0d2;
+}
+
+#form-inicial
+{
+    
+}
+
+
+
+.form-inicial-parse
+{
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.form-inicial
+{
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.form-secun
+{
+    opacity: 1;
+    display: block;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.form-secun-backward
+{
+    opacity: 0;
+    display: block;
+    flex-direction: column;
+    transform: translateX(-300px);
+    transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
 }
 
 .extra-buttons {
@@ -143,6 +185,8 @@ input::-moz-focus-inner {
     flex: 0.3;
     font-size: 12px;
     padding: 10px 20px;
+    justify-content: center;
+    margin-top: 30px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
