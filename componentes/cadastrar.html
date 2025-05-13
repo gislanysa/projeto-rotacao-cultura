@@ -12,10 +12,6 @@
     </div>
     <div class="page">
         <div class="container">
-            <div class="left">
-                <div class="login">Rotação de Cultura</div>
-                <div class="eula">O projeto Rotação de Cultura é uma iniciativa inovadora que visa otimizar o cultivo agrícola por meio da aplicação de técnicas avançadas.</div>
-            </div>
             <!--
                 <svg viewBox="0 0 320 300">
                     <defs>
@@ -31,6 +27,9 @@
                 </svg>
             -->
             <div class="right">
+                <div class="forms-title">
+                    <h3>Cadastro</h3>
+                </div>
                 <form target="_self" action="../login.html">
                     <div id="form-inicial">
                         <label for="firstname">Primeiro nome</label>
@@ -42,22 +41,23 @@
                         <label for="phone">Telefone</label>
                         <input type="tel" id="phone">
                         
-                        <div class="button-div">
+                        <div class="extra-buttons">
+                            <button type="button" class="btn" onclick="window.location.href='../login.html'">Voltar</button>
                             <button type="button" class="btn" onclick="nextForm()">Próximo</button>
                         </div>
                     </div>
 
                     <div id="form-final" class="form-secun-backward">
                         <label for="datanasc">Data de nascimento</label>
-                        <input type="date" id="datanasc">
+                        <input type="date" class="dark" id="datanasc">
                         <label for="senha">Crie sua senha</label>
                         <input type="password" id="senha">
                         <label for="confirmsenha">Confirme sua senha</label>
                         <input type="password" id="confirmsenha" class="to-bottom">
 
-                        <div class="button-div">
+                        <div class="extra-buttons">
                             <button type="button" class="btn" onclick="backForm()">Anterior</button>
-                            <input type="submit" class="next-button" value="Enviar">
+                            <input type="submit" class="btn" value="Enviar">
                         </div>
                     </div>
                 </form>
