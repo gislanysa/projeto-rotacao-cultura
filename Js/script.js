@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// script global
-=======
 document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const seedGroups = document.querySelectorAll(".family-group");
@@ -35,4 +32,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   
->>>>>>> 19cfe7024da32ca57101f67703745c89fda54613
