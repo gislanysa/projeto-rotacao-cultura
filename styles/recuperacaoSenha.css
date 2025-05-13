@@ -35,7 +35,7 @@ body {
     align-items: center;
     margin: 0 auto;
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     background: #474A59;
     padding: 40px;
     border-radius: 12px;
@@ -44,7 +44,7 @@ body {
 
 .recuperacao {
     color: #BD00FF;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 20px;
     text-align: center;
@@ -75,11 +75,11 @@ label {
 input {
     background: transparent;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     flex: auto;
-    line-height: 30px;
+    line-height: 20px;
     outline: none;
-    width: 100%;
+    width: 75%;
     padding: 8px;
     border: none;
     border-radius: 30px;
@@ -94,7 +94,7 @@ input {
 }
 
 #submit {
-    color: #ffffff;
+    color: #707075;
 
     cursor: pointer;
 
@@ -111,12 +111,13 @@ input {
     display:block;
     justify-content: center;
     gap: 15px; 
-    margin-top: 35px; 
+    margin-top: 20px; 
+    text-align: center;
 }
 
 .btn {
     background: transparent;
-    color: #ffffff;
+    color: #707075;
     flex: 0.3;
     font-size: 12px;
     padding: 10px 20px;
@@ -124,6 +125,7 @@ input {
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease; 
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -138,25 +140,6 @@ input {
     background: linear-gradient(45deg, #BD00FF, #6600ff);
     color: white;
     transform: scale(1.05);
-}
-
-nav {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-}
-
-nav a {
-    color: #4e4d4d;
-    text-decoration: none;
-    padding: 0 10px;
-}
-
-nav a:hover {
-    color: #BD00FF;
-    text-decoration: underline;
 }
 
 .accenture {
