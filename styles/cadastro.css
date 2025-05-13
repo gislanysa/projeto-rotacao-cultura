@@ -141,7 +141,11 @@ input::-moz-focus-inner {
 .form-inicial-parse
 {
     opacity: 0;
+<<<<<<< HEAD
     /*display: none;*/
+=======
+    display: none;
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -149,7 +153,11 @@ input::-moz-focus-inner {
 .form-inicial
 {
     opacity: 1;
+<<<<<<< HEAD
    /* display: contents;*/
+=======
+    display: contents;
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -157,7 +165,11 @@ input::-moz-focus-inner {
 .form-secun
 {
     opacity: 1;
+<<<<<<< HEAD
     /*display: contents;*/
+=======
+    display: contents;
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -165,7 +177,11 @@ input::-moz-focus-inner {
 .form-secun-backward
 {
     opacity: 0;
+<<<<<<< HEAD
     /*display: none;*/
+=======
+    display: none;
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
     flex-direction: column;
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
@@ -217,11 +233,14 @@ input::-moz-focus-inner {
     height: auto; /* Mantém a proporção correta da imagem */
   }
 
+<<<<<<< HEAD
 .to-bottom
 {
     margin-bottom: 70px;
 }
 
+=======
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
 .button-div
 {
     width: 100%;
@@ -229,5 +248,9 @@ input::-moz-focus-inner {
     display: flex;
     flex-direction: row;
     justify-content: center;
+<<<<<<< HEAD
     align-items: center;
+=======
+    align-items: end;
+>>>>>>> 868e1e912f4bbb690c93b934b9fb19c348ba2185
 }
