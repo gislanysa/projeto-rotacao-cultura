@@ -149,6 +149,6 @@ input {
 }
 
 .accenture img {
-    width: 10rem; /* Ajuste o tamanho */
-    height: auto; /* Mantém a proporção correta da imagem */
+    width: 10rem;
+    height: auto; 
 }
