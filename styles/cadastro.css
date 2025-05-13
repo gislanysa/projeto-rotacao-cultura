@@ -32,7 +32,7 @@ body {
 .left {
     background: white;
     border-radius: 8px 0px 0px 8px;
-    height: calc(100% - 40px);
+    height: 340px;
     top: 20px;
     position: relative;
     z-index: 1;
@@ -128,15 +128,20 @@ input::-moz-focus-inner {
 
 #form-inicial
 {
-    
+    position: absolute;
+    margin-left: 25px;
 }
 
-
+#form-final
+{
+    position: absolute;
+    margin-left: 25px;
+}
 
 .form-inicial-parse
 {
     opacity: 0;
-    display: none;
+    /*display: none;*/
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -144,7 +149,7 @@ input::-moz-focus-inner {
 .form-inicial
 {
     opacity: 1;
-    display: contents;
+   /* display: contents;*/
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -152,7 +157,7 @@ input::-moz-focus-inner {
 .form-secun
 {
     opacity: 1;
-    display: contents;
+    /*display: contents;*/
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
 }
@@ -160,7 +165,7 @@ input::-moz-focus-inner {
 .form-secun-backward
 {
     opacity: 0;
-    display: none;
+    /*display: none;*/
     flex-direction: column;
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
@@ -212,6 +217,11 @@ input::-moz-focus-inner {
     height: auto; /* Mantém a proporção correta da imagem */
   }
 
+.to-bottom
+{
+    margin-bottom: 70px;
+}
+
 .button-div
 {
     width: 100%;
@@ -219,5 +229,5 @@ input::-moz-focus-inner {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: end;
+    align-items: center;
 }
