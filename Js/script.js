@@ -59,8 +59,40 @@ const seedInfo = {
 
     },
     feijao: {
-
-    }
+        title:  'Feijão (Phaseolus vulgaris)',
+        img:    'assets/feijao.jpg',
+        desc:   'Sazonalidade:\n Plantio ocorre de outubri a dezembro.\n Colheita ocorre de março a junho.\n\n Clima ideal:\n O feijão cresce melhor em temperaturas entre 18°C e 30°C.\n\n Solo ideal:\nPrefere solos leves, bem aerados, com boa capacidade de retenção de umidade, mas que não sejam encharcados.'
+    },
+    tomate: {
+        title:  'Tomate (Solanum lycopersicum)',
+        img:    'assets/tomate.jpg',
+        desc:   'Sazonalidade:\n Plantio ocorre de fevereiro a maio.\n Colheita ocorre  ocorre entre 4 a 6 meses após o plantio.\n\n Clima ideal:\n O tomate cresce melhor em temperaturas moderadas, entre 18°C e 28°C. Temperaturas muito altas ou muito baixas podem afetar negativamente a qualidade dos frutos.\n\n Solo ideal:\n Prefere solos bem drenados, férteis e ricos em matéria orgânica, como solos argilosos ou arenosos. O solo deve ser leve e com boa capacidade de retenção de água.'
+    },
+    batata: {
+        title:  'Batata (Solanum tuberosum)',
+        img:    'assets/batata.jpg',
+        desc:   'Sazonalidade:\n Plantio ocorre de janeiro a março.\n Colheita ocorre entre 3 a 4 meses após o plantio.\n\n Clima ideal:\n  A batata cresce melhor em climas temperados, com temperaturas médias entre 15°C e 20°C. Ela não tolera calor excessivo e se desenvolve melhor em temperaturas mais amenas.\n\n Solo ideal:\nA batata prefere solos bem drenados, ricos em matéria orgânica e com boa estrutura física. Solos arenosos ou argilosos bem-preparados são os mais indicados.'
+    },
+    banana: {
+        title:  'Banana (Musa spp.)',
+        img:    'assets/banana.jpg',
+        desc:   'Sazonalidade:\n O plantio da banana pode ser realizado ao longo de todo o ano, com o pico de plantio entre janeiro e março.\n Colheita ocorre aproximadamente 9 a 12 meses após o plantio.\n\n Clima ideal:\n A banana cresce bem em climas quentes, com temperaturas médias entre 25°C e 30°C. Ela não tolera geadas.\n\n Solo ideal:\nPrefere solos bem drenados, ricos em matéria orgânica, como solos argilosos ou arenosos com boa capacidade de retenção de água.'
+    },
+    algodao: {
+        title:  'Algodão (Gossypium hirsutum)',
+        img:    'assets/algodao.jpg',
+        desc:   'Sazonalidade:\n Plantio ocorre de outubro a dezembro.\n Colheita ocorre de março a maio.\n\n Clima ideal:\nO algodão prefere temperaturas altas, com uma média entre 25°C e 30°C durante o ciclo de cultivo.\n\n Solo ideal:\nSolos bem drenados e ricos em matéria orgânica, como solos argilosos ou arenosos, são ideais para o cultivo do algodão.'
+    },
+    cafe: {
+        title:  'Café (Coffea arabica)',
+        img:    'assets/cafe.jpg',
+        desc:   'Sazonalidade:\n Plantio durante todo o ano, mas o pico de plantio ocorre entre setembro e novembro.\n Colheita ocorre entre maio a setembro.\n\n Clima ideal:\nO café arabica cresce melhor em temperaturas amenas, entre 18°C e 25°C. Já o café robusta (Coffea canephora) prefere temperaturas mais altas.\n\n Solo ideal:\nPrefere solos bem drenados, profundos e ricos em matéria orgânica, como solos argilosos ou argilo-arenosos.'
+    },
+    laranja: {
+        title:  'Laranja (Citrus sinensis)',
+        img:    'assets/laranja.jpg',
+        desc:   'Sazonalidade:\n O plantio da laranja pode ser realizado ao longo de todo o ano, mas o pico é geralmente entre fevereiro e março.\n Colheita ocorre de março a agosto.\n\n Clima ideal:\n A laranja se desenvolve melhor em climas tropicais e subtropicais, com temperaturas médias entre 20°C e 28°C.\n\n Solo ideal:\n A laranja prefere solos bem drenados, com boa retenção de água e rica em matéria orgânica, como solos argilosos ou arenosos.'
+    },
 
 };
 
