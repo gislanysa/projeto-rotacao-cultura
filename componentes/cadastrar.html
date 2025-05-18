@@ -1,6 +1,56 @@
-<h1>Em andamento...</h1>
-<nav>
-    <a href="../index.html">Entrar</a> |
-    <a href="../login.html">Login</a> |
-    <a href="recuperarSenha.html">Recuperar Senha</a>
-</nav>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+        <link rel="stylesheet" href="../styles/cadastro.css">
+    </head>
+
+    <body>
+        <div class="accenture">
+            <img src="../assets/accenture_logo.svg" alt="accenture"/>
+        </div>
+    <div class="page">
+        <div class="container">
+            <div class="box">
+                <div class="forms-title">
+                    <h3>Cadastro</h3>
+                </div>
+                <form target="_self" action="../login.html">
+                    <div id="form-inicial">
+                        <label for="firstname">Primeiro nome</label>
+                        <input type="text" id="firstname">
+                        <label for="lastname">Ultimo nome</label>
+                        <input type="text" id="lastname">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone">
+                        
+                        <div class="extra-buttons">
+                            <button type="button" class="btn" onclick="window.location.href='../login.html'">Voltar</button>
+                            <button type="button" class="btn" onclick="nextForm()">Proximo</button>
+                        </div>
+                    </div>
+
+                    <div id="form-final" class="form-secun-backward">
+                        <label for="datanasc">Data de nascimento</label>
+                        <input type="date" class="dark" id="datanasc">
+                        <label for="senha">Crie sua senha</label>
+                        <input type="password" id="senha">
+                        <label for="confirmsenha">Confirme sua senha</label>
+                        <input type="password" id="confirmsenha" class="to-bottom">
+                        <div class="extra-buttons">
+                            <button type="button" class="btn" onclick="backForm()">Anterior</button>
+                            <input type="submit" class="btn" value="Enviar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="../Js/cadastro.js"></script>
+    </body>
+</html>
