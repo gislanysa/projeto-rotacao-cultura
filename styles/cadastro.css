@@ -19,6 +19,56 @@ body {
     padding: 20px;
 }
 
+label {
+    color: #c2c2c5;
+    display: block;
+    font-size: 14px;
+    height: 16px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+input {
+    background: transparent;
+    color: #f2f2f2;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    background-image: linear-gradient(to right, #BD00FF 40%, #03031f);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0% 2px;
+    padding-bottom: 6px;
+    transition: 0.3s ease;
+    width: 100%;
+    border-radius: 0;
+}
+
+input:hover {
+    outline: none;
+    background-size: 100% 2px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+    background-size: 100% 2px;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+input[type="submit"] {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
 .page {
     background: #e2e2e5;
     display: flex;
@@ -32,12 +82,11 @@ body {
 .container {
     display: flex;
     margin: 0 auto;
-    /*height: 360px;*/
     justify-content: center;
     width: 640px;
 }
 
-.right {
+.box {
     background: #474A59;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -47,123 +96,42 @@ body {
     color: #F1F1F2;
     border-radius: 8px;
     position: relative;
-    height: 450px;
+    min-height: 480px;
     width: 50%;
 }
-/*
-svg {
-    width: 320px;
-}
 
-path {
-    fill: none;
-    stroke: url(#linearGradient);
-    ;
-    stroke-width: 4;
-    stroke-dasharray: 240 1386;
-}
-*/
-
-label {
-    color: #c2c2c5;
-    display: block;
-    font-size: 14px;
-    height: 16px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-input {
-    background: transparent;
-    /*#f2f2f2*/
-    color: #f2f2f2;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 30px;
-    line-height: 30px;
-    outline: none !important;
-    border: 10px;
-    border-color: black;
-    width: 100%;
-}
-
-input[type="submit"]
-{
-    padding-top: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-}
-
-input:focus
-{
-    border-color: rgba(189, 0, 255, 0.5);
-}
-
-input::-moz-focus-inner {
-    border: 0;
-}
-
-.next-button {
-    color: #707075;
-    margin-top: 30px;
-    margin-left: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: color 0.3s, font-size 0.3s;
-}
-
-.next-button:focus {
-    color: #f2f2f2;
-    font-size: 1.2em;
-}
-
-.next-button:hover{
-    color: #f2f2f2;
-    font-size: 1.2em;
-}
-
-
-#form-inicial, #form-final
-{
+#form-inicial,
+#form-final {
     left: 10.5%;
     padding-left: 10px;
     padding-right: 10px;
-    display: flex;  
+    display: flex;
     flex-direction: column;
     position: absolute;
     justify-content: center;
     max-width: 90%;
 }
 
-.form-inicial-parse
-{
+.form-inicial-parse {
     opacity: 0;
-    /*display: none;*/
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
 }
 
-.form-inicial
-{
+.form-inicial {
     opacity: 1;
-   /* display: contents;*/
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-.form-secun
-{
+.form-secun {
     opacity: 1;
-    /*display: contents;*/
     transform: translateX(0);
     transition: transform 0.3s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-.form-secun-backward
-{
+.form-secun-backward {
     opacity: 0;
-    /*display: none;*/
     flex-direction: column;
     transform: translateX(-300px);
     transition: transform 0.5s ease-in-out, opacity 0.1s ease-in-out;
@@ -174,7 +142,8 @@ input::-moz-focus-inner {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px; /* Espaço entre os botões */
+    gap: 25px;
+    /* Espaço entre os botões */
 }
 
 .btn {
@@ -188,18 +157,20 @@ input::-moz-focus-inner {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Deixa o hover suave */
+    transition: all 0.3s ease;
+    /* Deixa o hover suave */
 }
 
 .btn:hover {
     background: linear-gradient(500deg, #9c00d4, #5300cf);
     color: white;
-    transform: scale(1.1);  /* Aumenta o botão no hover */
-    box-shadow: 0px 4px 15px rgba(189, 0, 255, 0.5);  /* Efeito de sombra */
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(189, 0, 255, 0.5);
 }
 
 .btn:focus {
-    outline: none; /* Tira o contorno padrão do navegador */
+    outline: none;
+    /* Tira o contorno padrão do navegador */
     background: linear-gradient(45deg, #BD00FF, #6600ff);
     color: white;
     transform: scale(1.05);
@@ -209,45 +180,18 @@ input::-moz-focus-inner {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-  }
-  
-  .accenture img {
-    width: 10rem; /* Ajuste o tamanho */
-    height: auto; /* Mantém a proporção correta da imagem */
-  }
+}
 
-.to-bottom
-{
+.accenture img {
+    width: 10rem;
+    height: auto;
+}
+
+.to-bottom {
     margin-bottom: 70px;
 }
 
-.button-div
-{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
-}
-
-.final-button
-{
-    background: transparent;
-    /*#f2f2f2*/
-    color: #f2f2f2;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 30px;
-    line-height: 30px;
-    outline: none !important;
-    border: 10px;
-    border-color: black;
-    width: 100%;
-}
-
-.forms-title
-{
+.forms-title {
     text-align: center;
     color: #BD00FF;
     font-size: 1.5rem;

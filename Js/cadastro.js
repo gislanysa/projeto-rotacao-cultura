@@ -26,13 +26,3 @@ function backForm()
     form2.classList.remove("form-secun");
     form2.classList.add("form-secun-backward");
 }
-
-/*
-function showPassword(elementId, btn)
-{
-    const input = document.getElementById(elementId);
-    const isPassword = input.type === "password";
-    input.type = isPassword ? "text" : "password";
-    btn.textContent = isPassword ? "🙈" : "👁️"; // Troca ícone opcionalmente
-}
-*/
