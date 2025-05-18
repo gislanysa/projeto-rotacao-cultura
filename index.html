@@ -24,6 +24,7 @@
         <a href="#terrenos">Terrenos</a>
         <a href="#tempo">Tempo</a>
         <a href="#rotacao">Rotação</a>
+        <a href="login.html">Sair</a>
       </nav>
     </header>
     <div class="container" id="inicio">
@@ -49,6 +50,7 @@
     </div>
     <section id="sementes" class="content-section">
       <h2>Escolha suas Sementes</h2>
+      <p class="subtitulo">Filtre por famílias botânicas e selecione as opções desejadas</p>
 
       <div class="seed-filters">
         <button class="filter-btn active" data-family="all">Todas</button>
@@ -330,6 +332,18 @@
             </section>
         </main>
     </section>
+
+    <div id="seed-modal">
+      <div class="modal-overlay"></div>
+    
+      <div class="modal-content">
+        <button class="close" aria-label="Fechar modal">&times;</button>
+    
+        <h3 id="modal-title"></h3>
+        <img id="modal-image" alt="" />
+        <p id="modal-desc"></p>
+      </div>
+    </div>
 
     <script src="Js/script.js"></script>
   </body>
