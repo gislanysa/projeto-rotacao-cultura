@@ -1,0 +1,32 @@
+.tempo-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 25px 0;
+    cursor: pointer;
+    font-size: 25px;
+    width: 240px;
+    height: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tempo-button:hover {
+    background-color: #27ae60;
+}
+.tempo-button:hover{
+    transform: translateY(-5px);
+}
+.tempo-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    gap: 52px;
+    margin-top: 52px;
+    width: 100%;
+}
+
