@@ -50,7 +50,7 @@
     </div>
     <section id="sementes" class="content-section">
       <h2>Escolha suas Sementes</h2>
-      <p class="subtitulo">Filtre por famílias botânicas e selecione as opções desejadas</p>
+      <p class="subtitulo">Filtre por famílias botânicas e selecione até 3 sementes por família</p>
 
       <div class="seed-filters">
         <button class="filter-btn active" data-family="all">Todas</button>
@@ -66,7 +66,7 @@
       <div class="family-group poaceae-group" data-family="poaceae">
         <h3 class="family-title poaceae">Poaceae</h3>
         <div class="seed-container">
-          <div class="seed-card poaceae">
+          <div class="seed-card poaceae" data-family="poaceae" id="milho">
             <div class="seed-image-container">
               <img src="assets/milho.jpg" alt="milho" class="seed-image" />
             </div>
@@ -82,7 +82,7 @@
             </div>
           </div>
 
-          <div class="seed-card poaceae">
+          <div class="seed-card poaceae" data-family="poaceae" id="arroz">
             <div class="seed-image-container">
               <img src="assets/arroz.jpg" alt="arroz" class="seed-image" />
             </div>
@@ -98,7 +98,7 @@
             </div>
           </div>
 
-          <div class="seed-card poaceae">
+          <div class="seed-card poaceae" data-family="poaceae" id="cana_acucar">
             <div class="seed-image-container">
               <img
                 src="assets/cana_acucar.jpg"
@@ -118,7 +118,7 @@
             </div>
           </div>
 
-          <div class="seed-card poaceae">
+          <div class="seed-card poaceae" data-family="poaceae" id="trigo">
             <div class="seed-image-container">
               <img src="assets/trigo.jpg" alt="trigo" class="seed-image" />
             </div>
@@ -139,7 +139,7 @@
       <div class="family-group fabaceae-group" data-family="fabaceae">
         <h3 class="family-title fabaceae">Fabaceae</h3>
         <div class="seed-container">
-          <div class="seed-card fabaceae">
+          <div class="seed-card fabaceae" data-family="fabaceae" id="soja">
             <div class="seed-image-container">
               <img src="assets/soja.jpg" alt="soja" class="seed-image" />
             </div>
@@ -155,7 +155,7 @@
             </div>
           </div>
 
-          <div class="seed-card fabaceae">
+          <div class="seed-card fabaceae" data-family="fabaceae" id="feijao">
             <div class="seed-image-container">
               <img src="assets/feijao.jpg" alt="feijão" class="seed-image" />
             </div>
@@ -176,7 +176,7 @@
       <div class="family-group solanaceae-group" data-family="solanaceae">
         <h3 class="family-title solanaceae">Solanaceae</h3>
         <div class="seed-container">
-          <div class="seed-card solanaceae">
+          <div class="seed-card solanaceae" data-family="solanaceae" id="tomate">
             <div class="seed-image-container">
               <img src="assets/tomate.jpg" alt="tomate" class="seed-image" />
             </div>
@@ -192,7 +192,7 @@
             </div>
           </div>
 
-          <div class="seed-card solanaceae">
+          <div class="seed-card solanaceae" data-family="solanaceae" id="batata">
             <div class="seed-image-container">
               <img src="assets/batata.jpg" alt="batata" class="seed-image" />
             </div>
@@ -213,7 +213,7 @@
       <div class="family-group musaceae-group" data-family="musaceae">
         <h3 class="family-title musaceae">Musaceae</h3>
         <div class="seed-container">
-          <div class="seed-card musaceae">
+          <div class="seed-card musaceae" data-family="musaceae" id="banana">
             <div class="seed-image-container">
               <img src="assets/banana.jpg" alt="banana" class="seed-image" />
             </div>
@@ -234,7 +234,7 @@
       <div class="family-group malvaceae-group" data-family="malvaceae">
         <h3 class="family-title malvaceae">Malvaceae</h3>
         <div class="seed-container">
-          <div class="seed-card malvaceae">
+          <div class="seed-card malvaceae" data-family="malvaceae" id="algodao">
             <div class="seed-image-container">
               <img src="assets/algodao.jpg" alt="algodão" class="seed-image" />
             </div>
@@ -255,7 +255,7 @@
       <div class="family-group rubiaceae-group" data-family="rubiaceae">
         <h3 class="family-title rubiaceae">Rubiaceae</h3>
         <div class="seed-container">
-          <div class="seed-card rubiaceae">
+          <div class="seed-card rubiaceae" data-family="rubiaceae" id="cafe">
             <div class="seed-image-container">
               <img src="assets/cafe.jpg" alt="café" class="seed-image" />
             </div>
@@ -276,7 +276,7 @@
       <div class="family-group rutaceae-group" data-family="rutaceae">
         <h3 class="family-title rutaceae">Rutaceae</h3>
         <div class="seed-container">
-          <div class="seed-card rutaceae">
+          <div class="seed-card rutaceae" data-family="rutaceae" id="laranja">
             <div class="seed-image-container">
               <img src="assets/laranja.jpg" alt="laranja" class="seed-image" />
             </div>
@@ -303,7 +303,7 @@
                     <img src="assets/terreno1.jpg" alt="Terreno 1">
                     <div class="card-content">
                         <h3>Terreno 1</h3>
-                        <p>Solo Argiloso - 10 hectares</p>
+                        <p>Solo Argiloso</p>
                         <div class="card-buttons">
                             <button class="btn-adicionar">Adicionar</button>
                         </div>
@@ -314,7 +314,7 @@
                     <img src="assets/terreno2.jpg" alt="Terreno 2">
                     <div class="card-content">
                         <h3>Terreno 2</h3>
-                        <p>Solo Arenoso - 8 hectares</p>
+                        <p>Solo Arenoso</p>
                     <div class="card-buttons">
                         <button class="btn-adicionar">Adicionar</button>
                     </div>
@@ -324,7 +324,7 @@
                     <img src="assets/terreno3.jpg" alt="Terreno 3">
                     <div class="card-content">
                         <h3>Terreno 3</h3>
-                        <p>Solo Franco - 12 hectares</p>
+                        <p>Solo Franco</p>
                     <div class="card-buttons">
                         <button class="btn-adicionar">Adicionar</button>
                     </div>
@@ -347,16 +347,38 @@
 
     <div id="seed-modal">
       <div class="modal-overlay"></div>
-    
       <div class="modal-content">
         <button class="close" aria-label="Fechar modal">&times;</button>
-    
         <h3 id="modal-title"></h3>
         <img id="modal-image" alt="" />
         <p id="modal-desc"></p>
       </div>
     </div>
 
+
+    <section id="rotacao" class="content-section">
+      <h2>Visualização da Rotação de Cultura</h2>
+      <button id="generate-rotation" class="generate-btn">Gerar Tabela de Rotação</button>
+      
+      <div id="rotation-table-container">
+        <table id="rotation-table" class="rotation-table">
+          <thead>
+            <tr>
+              <th>Etapa</th>
+              <th>Cultura</th>
+              <th>Família Botânica</th>
+              <th>Duração</th>
+              <th>Período</th>
+            </tr>
+          </thead>
+          <tbody id="rotation-body">
+            <!-- gerado no js  -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <script src="Js/script.js"></script>
+    <script src="Js/rotacao.js"></script>
   </body>
 </html>
