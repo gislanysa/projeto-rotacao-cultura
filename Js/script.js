@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Aplicar o filtro "Poaceae" ao carregar a página
-    applyFilter("poaceae");
+    applyFilter("all");
 });
 
 const seedInfo = {

@@ -214,41 +214,66 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateRotationTable() {
-        if (!state.seeds.length || !state.terrain || !state.time) {
-            alert('Por favor, complete todas as seleções!');
-            return;
-        }
-
-        
-        const totalMonths = state.time.includes('ano') ? 
-            parseInt(state.time) * 12 : 
-            parseInt(state.time);
-        
-        const monthsPerStage = Math.floor(totalMonths / state.seeds.length);
-        const startDate = new Date();
-        
-        
-        elements.rotationBody.innerHTML = '';
-        elements.rotationTable.style.display = 'table';
-        
-        state.seeds.forEach((seed, index) => {
-            const start = new Date(startDate);
-            start.setMonth(start.getMonth() + (index * monthsPerStage));
-            
-            const end = new Date(start);
-            end.setMonth(end.getMonth() + monthsPerStage);
-            
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${seed.name}</td>
-                <td>${seed.family}</td>
-                <td>${monthsPerStage} meses</td>
-                <td>${formatDate(start)} - ${formatDate(end)}</td>
-            `;
-            elements.rotationBody.appendChild(row);
-        });
+    if (state.seeds.length !== 3 || !state.terrain || !state.time) {
+        alert('Por favor, selecione 3 sementes, um terreno e o tempo!');
+        return;
     }
+
+    const totalMonths = state.time.includes('ano') ? parseInt(state.time) * 12 : parseInt(state.time);
+    const monthsPerStage = Math.floor(totalMonths / 3); // 3 culturas
+
+    const lotes = 3;
+    const tableHTML = [];
+    const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
+    // Limpa tabela
+    elements.rotationBody.innerHTML = '';
+
+    // Cabeçalho dinâmico: Lote | Jan | Fev | ...
+    const headerRow = document.createElement('tr');
+    headerRow.innerHTML = `<th>Lote</th>`;
+    for (let i = 0; i < totalMonths; i++) {
+        headerRow.innerHTML += `<th>${monthNames[i % 12]}</th>`;
+    }
+
+    // Substitui thead pelo novo cabeçalho
+    elements.rotationTable.querySelector('thead').innerHTML = '';
+    elements.rotationTable.querySelector('thead').appendChild(headerRow);
+
+    // Gera linhas por lote com rotação
+    for (let lote = 0; lote < lotes; lote++) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>Lote ${lote + 1}</td>`;
+        for (let i = 0; i < 3; i++) {
+            const seedIndex = (i + lote) % 3;
+            for (let j = 0; j < monthsPerStage; j++) {
+                row.innerHTML += `<td class="culture" style="background-color:${getColorForCulture(state.seeds[seedIndex].name)}">${state.seeds[seedIndex].name}</td>`;
+            }
+        }
+        elements.rotationBody.appendChild(row);
+    }
+
+    elements.rotationTable.style.display = 'table';
+}
+
+function getColorForCulture(name) {
+    const cores = {
+        'Milho': '#00FF00',
+        'Arroz': '#00FF00',
+        'Cana de Açucar': '#00FF00',
+        'Trigo': '#00FF00',
+        'Soja': '#0000FF',
+        'Feijão': '#0000FF',
+        'Tomate': '#FF0000',
+        'Batata': '#FF0000',
+        'Banana': '#FFFF00',
+        'Algodão': '#FFFFFF',
+        'Café': '#8B4513',
+        'Laranja': '#FFA500'
+        // adicione mais conforme suas sementes
+    };
+    return cores[name] || '#e2e8f0'; // cor padrão caso não encontre
+}
 
     function formatDate(date) {
         return date.toLocaleDateString('pt-BR', {
