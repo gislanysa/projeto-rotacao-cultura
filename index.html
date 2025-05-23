@@ -24,7 +24,7 @@
         <a href="#terrenos">Terrenos</a>
         <a href="#tempo">Tempo</a>
         <a href="#rotacao">Rotação</a>
-        <a href="login.html">Sair</a>
+        <a href="login.html">Sair</a> 
       </nav>
     </header>
     <div class="container" id="inicio">
@@ -75,7 +75,7 @@
               <p class="scientific-name">Zea mays</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="milho">Adicionar</button>
               <button class="info-button" onclick="openModal('milho')">
                 Saiba mais
               </button>
@@ -91,7 +91,7 @@
               <p class="scientific-name">Oryza sativa</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="arroz">Adicionar</button>
               <button class="info-button" onclick="openModal('arroz')">
                 Saiba mais
               </button>
@@ -111,7 +111,7 @@
               <p class="scientific-name">Saccharum officinarum</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="Cana de Açucar">Adicionar</button>
               <button class="info-button" onclick="openModal('cana_acucar')">
                 Saiba mais
               </button>
@@ -127,7 +127,7 @@
               <p class="scientific-name">Triticum aestivum</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="trigo">Adicionar</button>
               <button class="info-button" onclick="openModal('trigo')">
                 Saiba mais
               </button>
@@ -148,7 +148,7 @@
               <p class="scientific-name">Glycine max</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="soja">Adicionar</button>
               <button class="info-button" onclick="openModal('soja')">
                 Saiba mais
               </button>
@@ -164,7 +164,7 @@
               <p class="scientific-name">Phaseolus vulgaris</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="feijao">Adicionar</button>
               <button class="info-button" onclick="openModal('feijao')">
                 Saiba mais
               </button>
@@ -185,7 +185,7 @@
               <p class="scientific-name">Solanum lycopersicum</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="tomate">Adicionar</button>
               <button class="info-button" onclick="openModal('tomate')">
                 Saiba mais
               </button>
@@ -201,7 +201,7 @@
               <p class="scientific-name">Solanum tuberosum</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="batata">Adicionar</button>
               <button class="info-button" onclick="openModal('batata')">
                 Saiba mais
               </button>
@@ -222,7 +222,7 @@
               <p class="scientific-name">Musa spp.</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="banana">Adicionar</button>
               <button class="info-button" onclick="openModal('banana')">
                 Saiba mais
               </button>
@@ -243,7 +243,7 @@
               <p class="scientific-name">Gossypium hirsutum</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="algodao">Adicionar</button>
               <button class="info-button" onclick="openModal('algodao')">
                 Saiba mais
               </button>
@@ -264,7 +264,7 @@
               <p class="scientific-name">Coffea arabica</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="cafe">Adicionar</button>
               <button class="info-button" onclick="openModal('cafe')">
                 Saiba mais
               </button>
@@ -285,7 +285,7 @@
               <p class="scientific-name">Citrus sinensis</p>
             </div>
             <div class="seed-actions">
-              <button class="add-button">Adicionar</button>
+              <button class="add-button" data-name="Laranja">Adicionar</button>
               <button class="info-button" onclick="openModal('laranja')">
                 Saiba mais
               </button>
@@ -305,7 +305,7 @@
                         <h3>Terreno 1</h3>
                         <p>Solo Argiloso - 10 hectares</p>
                         <div class="card-buttons">
-                            <button class="btn-adicionar">Adicionar</button>
+                            <button class="btn-adicionar" data-name="Terreno de 10">Adicionar</button>
                         </div>
                     </div>
                 </article>
@@ -316,7 +316,7 @@
                         <h3>Terreno 2</h3>
                         <p>Solo Arenoso - 8 hectares</p>
                     <div class="card-buttons">
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" data-name="Terreno de 8">Adicionar</button>
                     </div>
                 </article>
 
@@ -326,7 +326,7 @@
                         <h3>Terreno 3</h3>
                         <p>Solo Franco - 12 hectares</p>
                     <div class="card-buttons">
-                        <button class="btn-adicionar">Adicionar</button>
+                        <button class="btn-adicionar" data-name="Terreno de 12">Adicionar</button>
                     </div>
                 </article>
             </section>
@@ -338,7 +338,6 @@
     
       <div class="modal-content">
         <button class="close" aria-label="Fechar modal">&times;</button>
-    
         <h3 id="modal-title"></h3>
         <img id="modal-image" alt="" />
         <p id="modal-desc"></p>
@@ -346,5 +345,81 @@
     </div>
 
     <script src="Js/script.js"></script>
-  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- Carrinho e suas dependencias -->
+    <button id="cart-button" class="cart-btn">
+    <i class="fas fa-shopping-cart"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+       height="24" fill="currentColor" class="cart-icon" viewBox="0 0 24 24">
+    <path d="M7 18c-1.104 0-1.99.896-1.99 2s.886 2 1.99 2 2-.896 2-2-.896-2
+    -2-2zm10 0c-1.104 0-1.99.896-1.99 2s.886 2 1.99 2 2-.896 2-2-.896-2-2-2zM7.16 14l.94
+    -2h7.45c.82 0 1.54-.5 1.85-1.22l3.58-8.28a1 1 0 00-.92-1.5H5.21l-.94-2H0v2h2l3.6 
+    7.59-1.35 2.44C3.52 14.37 4.48 16 6 16h12v-2H7.16z"/>
+    </svg>
+    </i>
+    </button>
+
+    <div id="cart-sidebar" class="cart-sidebar hidden">
+    <h3>Seu Carrinho<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.49-.402L1.61 2H.5a.5.5 0 0 1-.5-.5zm3.14 4l1.25 5.5H13l1.25-5.5H3.14zM5.5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+    </svg>
+    </h3>
+      <ul id="cart-items"></ul>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cartButton = document.getElementById('cart-button');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartItems = document.getElementById('cart-items');
+
+    cartButton.addEventListener('click', () => {
+      cartSidebar.classList.toggle('show');
+      cartSidebar.classList.toggle('hidden');
+    });
+
+    const addButtons = document.querySelectorAll('.add-button, .btn-adicionar');
+
+    addButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const itemName = button.getAttribute('data-name');
+        const li = document.createElement('li');
+      li.textContent = itemName + ' ';
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'X';
+    removeBtn.style.marginLeft = '10px';
+    removeBtn.style.background = 'transparent';
+    removeBtn.style.color = 'red';
+    removeBtn.style.border = 'none';
+    removeBtn.style.cursor = 'pointer';
+
+    removeBtn.addEventListener('click', () => {
+    cartItems.removeChild(li);
+    });
+
+    li.appendChild(removeBtn);
+    cartItems.appendChild(li);
+
+      });
+      });
+      });
+    </script>
+
+
+
+</body>
 </html>
