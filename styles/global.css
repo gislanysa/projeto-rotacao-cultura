@@ -128,12 +128,42 @@ header {
   text-align: left;
 }
 
+
 .rotacao-content h1 {
     color: #0070C0;
     margin-bottom: 1.5rem;
     text-align: left;
+    font-size: 2.3rem
+
 }
 .rotacao-content p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 0;
+}
+
+
+.computacao-main {
+    padding: 2rem 5%;
+    max-width: 100%;
+    margin: 6.25rem auto 0;
+    text-align: left;
+}
+
+.computacao-content {
+  width: 100%;
+  text-align: left;
+}
+
+.computacao-content h1 {
+    color: #0070C0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+   font-size: 2.3rem;
+
+}
+.computacao-content p {
   font-size: 1.1rem;
   color: #ffffff;
   text-align: left;
