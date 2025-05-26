@@ -54,20 +54,20 @@ header {
 }
 
 #rotation-table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  overflow-x: auto; /* Permite rolagem horizontal */
+  overflow-x: auto; /* Rolagem */
+  margin-top: 20px;
+}
+
+.table-wrapper {
+  display: table;
+  justify-content: center;
+  margin: 0 auto; /* Centraliza tabela */
 }
 
 .rotation-table {
   border-collapse: collapse;
-  margin: 0 auto; /* Em caso de fallback */
-  width: auto;
-  min-width: 600px;
-  max-width: 100%;
-  text-align: center;
+  min-width: 600px; /* Largura scroll */
 }
 
 .rotation-table th,
@@ -78,14 +78,7 @@ header {
   vertical-align: middle;
   padding: 10px 15px;
   border: 2px solid #000000;
-}
-
-#rotation-table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px;
+  white-space: nowrap; /* Evita quebra tex */
 }
 
 .culture {
