@@ -260,7 +260,7 @@ function getColorForCulture(name) {
     const cores = {
         'Milho': '#00FF00',
         'Arroz': '#00FF00',
-        'Cana de Açucar': '#00FF00',
+        'Cana de Açúcar': '#00FF00',
         'Trigo': '#00FF00',
         'Soja': '#0000FF',
         'Feijão': '#0000FF',
