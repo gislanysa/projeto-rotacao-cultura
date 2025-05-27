@@ -53,6 +53,11 @@ header {
   transform: scale(1.03);
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #rotation-table-container {
   width: 100%;
   overflow-x: auto; /* Rolagem */
