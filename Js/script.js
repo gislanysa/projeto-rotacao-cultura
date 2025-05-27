@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Aplicar o filtro "Poaceae" ao carregar a página
-    applyFilter("poaceae");
+    applyFilter("all");
 });
 
 const seedInfo = {
@@ -113,7 +113,7 @@ function openModal(id) {
     modal.classList.add('open');
   }
   
-  /*  C) fechar modal clicando no overlay ou no botão “×”              */
+  // fechar modal clicando no overlay ou no botão “×”
   modal.addEventListener('click', e => {
     if (
       e.target.classList.contains('modal-overlay') ||
