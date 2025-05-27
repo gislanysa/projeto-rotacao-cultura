@@ -2,10 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -14,16 +10,9 @@
   --font-size: 1rem;
   --text: var(--font-size)/150% var(--font-family);
   scroll-behavior: smooth;
-  --background-color: #000000;
-  --font-family: 'Archive', sans-serif;
-  --font-size: 1rem;
-  --text: var(--font-size)/150% var(--font-family);
-  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background-color);
-  font: var(--text);
   background-color: var(--background-color);
   font: var(--text);
 }
@@ -39,70 +28,6 @@ header {
   width: 100%;
   top: 0;
   z-index: 100;
-}
-
-.button-gnrt {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.generate-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.generate-btn:hover {
-  background-color: #27ae60;
-  transform: scale(1.03);
-}
-
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#rotation-table-container {
-  width: 100%;
-  overflow-x: auto; /* Rolagem */
-  margin-top: 20px;
-}
-
-.table-wrapper {
-  display: table;
-  justify-content: center;
-  margin: 0 auto; /* Centraliza tabela */
-}
-
-.rotation-table {
-  border-collapse: collapse;
-  min-width: 600px; /* Largura scroll */
-}
-
-.rotation-table th,
-.rotation-table td {
-  color: #000000;
-  background-color: #a9d3f1;
-  text-align: center;
-  vertical-align: middle;
-  padding: 10px 15px;
-  border: 2px solid #000000;
-  white-space: nowrap; /* Evita quebra tex */
-}
-
-.culture {
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: normal;
 }
 
 .logo img {
@@ -128,12 +53,6 @@ table {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-.container {
-  margin-top: 6.25rem;
-  padding: 5% 7%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .title-section {
@@ -146,16 +65,9 @@ table {
   color: #0070C0;
   margin-bottom: 1.25rem;
   line-height: 1.2;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #0070C0;
-  margin-bottom: 1.25rem;
-  line-height: 1.2;
 }
 
 .title-section p {
-  font-size: 1.5rem;
-  color: #666;
   font-size: 1.5rem;
   color: #666;
 }
@@ -190,20 +102,9 @@ table {
   transition: background-color 0.3s;
   text-align: left;
   width: fit-content;
-  display: inline-block;
-  background-color: #BD00FF;
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  text-align: left;
-  width: fit-content;
 }
 
 .saiba-mais-btn:hover {
-  background-color: #580058;
   background-color: #580058;
 }
 
@@ -218,8 +119,8 @@ table {
 .rotacao-main {
   padding: 2rem 5%;
   max-width: 100%;
-  margin: 6.25rem auto 0;
-  text-align: left;
+  margin: 0.5rem auto 0;
+  text-align: right;
 }
 
 .rotacao-content {
@@ -233,7 +134,6 @@ table {
   text-align: left;
   font-size: 2.3rem
 }
-
 
 .rotacao-content p {
   font-size: 1.1rem;
@@ -407,14 +307,12 @@ table {
   height: 3px;
 }
 
-
 .seed-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   padding: 1.5rem;
 }
-
 
 .seed-card {
   background: #1e1e1e;
@@ -467,8 +365,6 @@ table {
 
 .add-button,
 .info-button {
-.add-button,
-.info-button {
   flex: 1;
   padding: 0.7rem;
   border: none;
@@ -498,8 +394,6 @@ table {
 
 #seed-modal {
   display: none;
-#seed-modal {
-  display: none;
 }
 
 #seed-modal.open {
@@ -516,7 +410,6 @@ table {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, .65);
-  background: rgba(0, 0, 0, .65);
   backdrop-filter: blur(2px);
 }
 
@@ -526,7 +419,6 @@ table {
   max-width: 600px;
   max-height: 100vh;
   overflow-y: auto;
-  background: #1e1e1e;
   background: #1e1e1e;
   border-radius: 8px;
   padding: 2rem;
@@ -544,7 +436,6 @@ table {
 }
 
 #seed-modal .close {
-#seed-modal .close {
   position: absolute;
   top: .4rem;
   right: .7rem;
@@ -552,20 +443,9 @@ table {
   border: none;
   font-size: 2rem;
   color: #fff;
-  color: #fff;
   cursor: pointer;
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(.8);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 @keyframes scaleIn {
   from {
     transform: scale(.8);
@@ -583,45 +463,56 @@ table {
 }
 
 
-/* Estilo para seleção de tempo */
-.tempo-button.selected {
-  background-color: #4CAF50;
-  color: white;
-  border: 2px solid #45a049;
-}
-
-/* Feedback visual para seleções */
-.selected {
-  position: relative;
-}
-
-.selected::after {
-  content: "✓";
-  margin-left: 5px;
+summary {
+  cursor: pointer;
   font-weight: bold;
+  color: #ffffff;
+  padding: 1rem;
+  background-color: #0e0e0e;
+  border-radius: 50px;
+  margin: 15px;
+  text-align: center;
 }
 
-/* Estilo para botões selecionados */
-.selected {
-  background-color: #4CAF50;
-  color: white;
-  border: 2px solid #45a049;
+
+.details {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
 }
 
-/* Estilo para botões desabilitados */
-.disabled,
-.tempo-button.disabled,
-.btn-adicionar.disabled {
-  background-color: #e0e0e0;
-  color: #a0a0a0;
-  cursor: not-allowed;
-  opacity: 0.7;
+.titulo {
+  color: #0070C0;
+  margin-bottom: 20px;
 }
 
-/* Efeito hover para botões desabilitados */
-.btn-adicionar.disabled:hover,
-.tempo-button.disabled:hover,
-.add-button.disabled:hover {
-  opacity: 0.7;
-  transform: scale(0.98);
+details {
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #423d3d;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px;
+}
+
+summary:hover {
+  color: #0070C0;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+details[open] .content {
+  max-height: 500px;
+  padding: 12px;
 }
