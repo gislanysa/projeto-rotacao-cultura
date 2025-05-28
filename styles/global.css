@@ -180,76 +180,6 @@ table {
   margin-bottom: 1.5rem;
 }
 
-.rotacao-main {
-  padding: 2rem 5%;
-  max-width: 100%;
-  margin: 6.25rem auto 0;
-  text-align: left;
-}
-
-.rotacao-content {
-  width: 100%;
-  text-align: left;
-}
-
-.rotacao-content h1 {
-  color: #0070C0;
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.rotacao-content p {
-  font-size: 1.1rem;
-  color: #ffffff;
-  text-align: left;
-  margin-left: 0;
-}
-
-.beneficios-wrapper {
-  display: flex;
-  gap: 2rem;
-  margin-top: 3rem;
-  justify-content: space-around;
-}
-
-.imagem-beneficios {
-  max-width: 40%;
-  margin-right: 2rem;
-}
-
-.beneficios-section {
-  max-width: 50%;
-  padding: 1.5rem 0;
-  text-align: left;
-  color: #0070C0;
-  flex: 1;
-}
-
-.beneficios-section h2 {
-  color: #0070C0;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.beneficios-section p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.beneficios-section ul {
-  font-size: 1.1rem;
-  color: #ffffff;
-  list-style-position: inside;
-  padding-left: 0;
-  text-align: left;
-}
-
-.beneficios-section li {
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
 .content-section {
   min-height: 100vh;
   padding: 7rem 5% 3rem;
@@ -470,14 +400,15 @@ table {
 }
 
 
-/* Estilo para seleção de tempo */
+/* Estilos para seleção*/
+
 .tempo-button.selected {
   background-color: #4CAF50;
   color: white;
   border: 2px solid #45a049;
 }
 
-/* Feedback visual para seleções */
+/* Feedback visual */
 .selected {
   position: relative;
 }
@@ -488,14 +419,14 @@ table {
   font-weight: bold;
 }
 
-/* Estilo para botões selecionados */
+/* Botões selecionados */
 .selected {
   background-color: #4CAF50;
   color: white;
   border: 2px solid #45a049;
 }
 
-/* Estilo para botões desabilitados */
+/* Estilo botões desab */
 .disabled,
 .tempo-button.disabled,
 .btn-adicionar.disabled {
@@ -505,10 +436,233 @@ table {
   opacity: 0.7;
 }
 
-/* Efeito hover para botões desabilitados */
+/* Hover botões desab */
 .btn-adicionar.disabled:hover,
 .tempo-button.disabled:hover,
 .add-button.disabled:hover {
   opacity: 0.7;
   transform: scale(0.98);
+}
+
+
+/* Saiba Mais */
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 1rem;
+  background-color: #0e0e0e;
+  border-radius: 50px;
+  margin: 15px;
+  text-align: center;
+}
+
+.details {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.titulo {
+  color: #0070C0;
+  margin-bottom: 20px;
+}
+
+.beneficios-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: space-around;
+}
+
+.imagem-beneficios {
+  max-width: 40%;
+  margin-right: 2rem;
+}
+
+.beneficios-section {
+  max-width: 50%;
+  padding: 1.5rem 0;
+  text-align: left;
+  color: #0070C0;
+  flex: 1;
+}
+
+.beneficios-section h2 {
+  color: #0070C0;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.beneficios-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.beneficios-section ul {
+  font-size: 1.1rem;
+  color: #ffffff;
+  list-style-position: inside;
+  padding-left: 0;
+  text-align: left;
+}
+
+.beneficios-section li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.rotacao {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.rotacao h1 {
+  color: #0070C0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem
+}
+
+.rotacao p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 0;
+}
+
+.computacao-main {
+  padding: 2rem 5%;
+  max-width: 100%;
+  margin: 6.25rem auto 0;
+  text-align: left;
+}
+
+.computacao-content {
+  width: 100%;
+  text-align: left;
+}
+
+.computacao-content h1 {
+  color: #0070C0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 1.6rem;
+
+}
+
+.computacao-content p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 0;
+}
+
+.beneficios-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: space-around;
+}
+
+.beneficios-section {
+  max-width: 500px;
+  padding: 1.5rem 0;
+  text-align: left;
+  color: #0070C0;
+  flex: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.beneficios-agricultura {
+  max-width: 500px;
+  padding: 1.5rem 0;
+  text-align: left;
+  margin-top: 4rem;
+  color: #0070C0;
+  flex: 1;
+}
+
+.beneficios-agricultura h2 {
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+/* Abertura Perguntas*/
+details {
+  margin: 16px 0;
+  border-radius: 12px;
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+details:hover {
+  box-shadow: 0 2px 6px #0070C0;
+}
+
+summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 16px 20px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  background-color: #0e0e0e;
+  background: linear-gradient(to right, #0070C0 50%, #0e0e0e 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
+  border: 1px solid white;
+  /*border-radius: x*/
+}
+
+details[open] summary {
+  background-position: 0 0;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: '➕';
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  content: '➖';
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #ddd;
+  font-size: 1rem;
+  text-align: justify;
+  margin-left: 35px;
+  margin-right: 35px;
+  line-height: 1.6;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+details[open] .content {
+  max-height: 550px;
+  padding: 16px 20px 24px;
 }
