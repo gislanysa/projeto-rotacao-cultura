@@ -494,6 +494,7 @@ summary {
   color: #0070C0;
   margin-bottom: 1rem;
   text-align: left;
+  font-size: 1.6rem;
 }
 
 .beneficios-section p {
@@ -526,7 +527,7 @@ summary {
   color: #0070C0;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-size: 2.3rem
+  font-size: 1.6rem
 }
 
 .rotacao p {
@@ -552,7 +553,7 @@ summary {
   color: #0070C0;
   margin-bottom: 1.5rem;
   text-align: left;
-  font-size: 2.3rem;
+  font-size: 1.6rem;
 
 }
 
@@ -589,6 +590,11 @@ summary {
   margin-top: 4rem;
   color: #0070C0;
   flex: 1;
+}
+
+.beneficios-agricultura h2 {
+  font-size: 1.6rem;
+  text-align: left;
 }
 
 /* Abertura Perguntas*/
