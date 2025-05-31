@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const state = {
         seeds: [],
         terrain: null,
@@ -36,29 +36,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initEventListeners() {
         elements.addButtons.forEach(btn => {
-            btn.addEventListener('click', function(event) {
+            btn.addEventListener('click', function (event) {
                 handleSeedSelection(event);
             });
         });
 
         elements.terrainButtons.forEach(btn => {
-            btn.addEventListener('click', function(event) {
+            btn.addEventListener('click', function (event) {
                 handleTerrainSelection(event);
             });
         });
 
         elements.timeButtons.forEach(btn => {
-            btn.addEventListener('click', function(event) {
+            btn.addEventListener('click', function (event) {
                 handleTimeSelection(event);
             });
         });
 
-        elements.generateBtn.addEventListener('click', function() {
+        elements.generateBtn.addEventListener('click', function () {
             generateRotationTable();
         });
 
         elements.filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const family = button.dataset.family;
                 applyFilter(family);
             });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const button = event.currentTarget;
         const card = button.closest('.seed-card');
         if (!card) return;
-        
+
         const family = card.dataset.family;
         const name = card.querySelector('h4').textContent;
         const seedId = card.id;
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const button = event.currentTarget;
         const card = button.closest('.terreno-card');
         if (!card) return;
-        
+
         const name = card.querySelector('h3').textContent;
         const terrainId = card.id || name.replace(/\s+/g, '-').toLowerCase();
 
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let months;
-        switch(state.time) {
+        switch (state.time) {
             case "6 meses": months = 6; break;
             case "1 ano": months = 12; break;
             case "2 anos": months = 24; break;
@@ -207,10 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const terrenoId = state.terrain.id.replace('terreno-', '');
         let numTalhoes;
-        switch(terrenoId) {
+        switch (terrenoId) {
             case '1': numTalhoes = 3; break;
-            case '2': numTalhoes = 6; break;
-            case '3': numTalhoes = 5; break;
+            case '2': numTalhoes = 5; break;
+            case '3': numTalhoes = 6; break;
             default: numTalhoes = 3;
         }
 
@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         table.className = 'rotation-table';
 
         const thead = document.createElement('thead');
+        
         const headerRow = document.createElement('tr');
         headerRow.appendChild(document.createElement('th'));
 
@@ -232,26 +233,26 @@ document.addEventListener('DOMContentLoaded', function() {
         table.appendChild(thead);
 
         const tbody = document.createElement('tbody');
-        
+
         matrizRotacao.forEach((talhao, index) => {
             const row = document.createElement('tr');
             const th = document.createElement('th');
             th.textContent = `Talhão ${index + 1}`;
             row.appendChild(th);
-            
+
             talhao.forEach((cultura, monthIndex) => {
                 const td = document.createElement('td');
                 td.textContent = cultura;
                 td.style.backgroundColor = cultureColors[cultura] || '#f8f9fa';
                 td.style.color = '#000000';
                 td.style.fontWeight = '500';
-                td.title = `Talhão ${index+1}, Mês ${monthIndex+1}: ${cultura}`;
+                td.title = `Talhão ${index + 1}, Mês ${monthIndex + 1}: ${cultura}`;
                 row.appendChild(td);
             });
-            
+
             tbody.appendChild(row);
         });
-        
+
         table.appendChild(tbody);
 
         elements.rotationContainer.innerHTML = '';
@@ -261,31 +262,88 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.rotationContainer.appendChild(legend);
     }
 
+    const INITIAL_NO_DESCANSO_MONTHS = 3;
+
+    const CULTURE_WEIGHTS = {
+        DEFAULT: 10,
+        DESCANSO: 5
+    };
+
+    function getRandomCultureWithWeights(cultures, weights) {
+        const total = weights.reduce((a, b) => a + b, 0);
+        const random = Math.random() * total;
+        let sum = 0;
+
+        for (let i = 0; i < cultures.length; i++) {
+            sum += weights[i];
+            if (random <= sum) return cultures[i];
+        }
+
+        return cultures[cultures.length - 1];
+    }
+
     function generateRandomRotation(numTalhoes, numMeses, selectedSeeds) {
         const matrizRotacao = [];
-        const allCultures = selectedSeeds.map(seed => seed.name);
-        allCultures.push("Descanso");
+        const regularCultures = selectedSeeds.map(seed => seed.name);
+        const allCultures = [...regularCultures, "Descanso"];
+        const MAX_CONSECUTIVE_REGULAR = 3;
+        const MAX_CONSECUTIVE_DESCANSO = 1;
 
         for (let t = 0; t < numTalhoes; t++) {
             const talhao = [];
             let lastCulture = null;
-            
+            let consecutiveCount = 0;
+
             for (let m = 0; m < numMeses; m++) {
-                let availableCultures = allCultures.filter(c => c !== lastCulture);
-                
+                // Descanso obrigatório a cada 6 meses
                 if (m > 0 && m % 6 === 0) {
-                    talhao.push("Descanso");
-                    lastCulture = "Descanso";
+                    if (lastCulture === "Descanso") {
+                        const available = regularCultures.filter(c => c !== lastCulture);
+                        const chosenCulture = available[Math.floor(Math.random() * available.length)];
+                        talhao.push(chosenCulture);
+                        lastCulture = chosenCulture;
+                        consecutiveCount = 1;
+                    } else {
+                        talhao.push("Descanso");
+                        lastCulture = "Descanso";
+                        consecutiveCount = 1;
+                    }
                     continue;
                 }
-                
-                const randomIndex = Math.floor(Math.random() * availableCultures.length);
-                const chosenCulture = availableCultures[randomIndex];
-                
+
+                let availableCultures;
+                if (lastCulture === "Descanso" && consecutiveCount >= MAX_CONSECUTIVE_DESCANSO) {
+                    availableCultures = allCultures.filter(c => c !== "Descanso");
+                } else if (lastCulture !== "Descanso" && consecutiveCount >= MAX_CONSECUTIVE_REGULAR) {
+                    availableCultures = allCultures.filter(c => c !== lastCulture);
+                } else {
+                    availableCultures = [...allCultures];
+                }
+
+                if (m < INITIAL_NO_DESCANSO_MONTHS) {
+                    availableCultures = availableCultures.filter(c => c !== "Descanso");
+                }
+
+                if (availableCultures.length === 0) {
+                    availableCultures = regularCultures.length > 0 ? [...regularCultures] : ["Descanso"];
+                }
+
+                const weights = availableCultures.map(c =>
+                    c === "Descanso" ? CULTURE_WEIGHTS.DESCANSO : CULTURE_WEIGHTS.DEFAULT
+                );
+
+                const chosenCulture = getRandomCultureWithWeights(availableCultures, weights);
+
+                if (chosenCulture === lastCulture) {
+                    consecutiveCount++;
+                } else {
+                    consecutiveCount = 1;
+                }
+
                 talhao.push(chosenCulture);
                 lastCulture = chosenCulture;
             }
-            
+
             matrizRotacao.push(talhao);
         }
 
@@ -296,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const legend = document.createElement('div');
         legend.className = 'rotation-legend';
         legend.innerHTML = '<h4>Legenda:</h4><div class="legend-items"></div>';
-        
+
         const itemsContainer = legend.querySelector('.legend-items');
 
         state.seeds.forEach(seed => {
@@ -316,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="legend-name">Descanso</span>
         `;
         itemsContainer.appendChild(item);
-        
+
         return legend;
     }
 
