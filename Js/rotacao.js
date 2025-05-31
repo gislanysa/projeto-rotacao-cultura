@@ -197,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        
-
         let months;
         switch(state.time) {
             case "6 meses": months = 6; break;

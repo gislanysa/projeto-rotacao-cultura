@@ -628,16 +628,34 @@ details[open] .content {
 .rotation-table {
   border-collapse: collapse;
   width: 100%;
-  margin: 20px 0;
+  margin: 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   font-size: 0.9em;
 }
 
+#rotation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+#rotation-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 .rotation-table th, 
 .rotation-table td {
-  padding: 12px 15px;
+  padding: 13px 15px;
   text-align: center;
   border: 1px solid #ddd;
+   white-space: nowrap;
 }
 
 .rotation-table th {
@@ -656,8 +674,6 @@ details[open] .content {
   background-color: #e9ecef;
 }
 
-
-
 .rotation-legend {
   margin: 20px 0;
   padding: 15px;
@@ -665,6 +681,14 @@ details[open] .content {
   border-radius: 5px;
   border: 1px solid #dee2e6;
   color: #000000;
+}
+
+#rotation-legend-container {
+  padding: 15px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  border: 1px solid #2c2c2c;
+  color: #ffffff;
 }
 
 .rotation-legend h4 {
