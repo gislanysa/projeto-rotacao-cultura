@@ -1,32 +1,123 @@
-# 🚀 Projeto Rotação de Cultura
+# 🌾 Projeto Rotação de Cultura
 
-Projeto residência tecnológica Porto Digital em parceria com Faculdade Senac de Pernambuco e Accenture
+**Residência Tecnológica Porto Digital**  
+Parceria entre a **Faculdade Senac Pernambuco** e a **Accenture**
+
+---
 
 ## 🎯 Objetivo
 
-Criação de uma plataforma web interativa para traduzir resultados gerados por quantum annealing que auxiliam na rotação de cultura
+Criar uma plataforma web interativa que apoia agricultores no **planejamento da rotação de culturas**, utilizando resultados gerados por **quantum annealing** (computação quântica).  
+A solução busca **otimizar decisões agrícolas complexas**, promovendo **produtividade**, **preservação do solo** e **sustentabilidade**.
 
-## 💻 Tecnologias
+---
 
-* HTML5
-* CSS3
-* JS
+## 🧠 Contexto
 
-## Como trabalhar nesse repositório:
+O planejamento de rotação de culturas é um desafio estratégico que define, para cada talhão e período, as culturas ideais a serem plantadas.  
+Com o aumento das possibilidades combinatórias, métodos tradicionais não são mais suficientes para gerar soluções em tempo hábil para a agricultura moderna.
 
-após clonar o projeto na sua maquina e antes de começar a trabalhar nesse projeto, crie uma nova branch:
+É aí que entra a **computação quântica**: com sua capacidade de processar milhares de variáveis simultaneamente, conseguimos propor **planos agrícolas otimizados**, considerando clima, solo, demanda de mercado, entre outros fatores.
 
-```bash
-git checkout -b <seu_nome_do_github>.<titulo_da_branch>
+---
+
+## 🌱 Por que a Agricultura?
+
+A agricultura é muito mais que plantar e colher: ela é **cultura, tradição e inovação**.
+
+- 🌾 Alimenta famílias  
+- 👩‍🌾 Gera empregos  
+- 🔄 Move a economia  
+- 🌍 Sustenta o meio ambiente  
+
+Valorizar a agricultura é reconhecer o esforço de quem transforma o solo em vida e garantir um futuro mais sustentável para todos.
+
+---
+
+## ⚛️ O que é Computação Quântica?
+
+Tecnologia baseada na **física quântica**, onde bits tradicionais (0 e 1) são substituídos por **qubits**, que podem ser 0, 1 ou ambos ao mesmo tempo.  
+Isso permite resolver problemas extremamente complexos **muito mais rápido** que computadores comuns.
+
+---
+
+## ✅ Benefícios para a Agricultura
+
+- 🌾 Melhoria da fertilidade do solo entre safras  
+- 🌱 Otimização do uso de água e insumos  
+- 🐛 Redução natural de pragas  
+- 🧪 Menor necessidade de fertilizantes químicos  
+- 💰 Aumento da rentabilidade e sustentabilidade  
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+- HTML5  
+- CSS3
+- JavaScript  
+
+---
+
+## 🛠️ Como Trabalhar Neste Repositório
+
+1. Clone o repositório:
+
+```bash  
+git clone https://github.com/seu-usuario/rotacao-de-cultura.git  
 ```
-exemplo de como escrever uma branch:
 
-```bash
-git checkout -b gislanysa.adicao-de-header
+2. Crie uma nova branch com seu nome e o título da tarefa:
+
+```bash  
+git checkout -b seu_nome.titulo-da-branch  
 ```
 
-Após criar sua branch e realizar suas mudanças no codigo faça um commit nessa mesma branch e efetue um git push. Estas ações faram com que na pagina inicial do repositório apareça a opção de você criar uma pull request.
+3. Faça suas alterações, commit e push:
 
-exemplo: https://github.com/gislanysa/projeto-rotacao-cultura/pull/1
+```bash  
+git add .  
+git commit -m "feat: adiciona header responsivo"  
+git push origin sua-branch  
+```
 
-Uma vez a sua pull request criada e você não tiver mais mudanças para fazer, peça a revisão do codigo a um colega e após receber aprovação você estará apto a fazer um merge pull request.
+4. Crie uma Pull Request no GitHub e solicite a revisão de um colega.
+
+---
+
+## 📸 Demonstrações Visuais
+
+Principais telas:
+
+```markdown  
+![Tela de Cadastro](assets/tela-cadastro.png)
+![Tela Sementes](assets/tela-Sementes.png)
+![Tela Responsiva](assets/tela-Responsiva.png)
+![Tela Saiba Mais](assets/tela-SaibaMais.png)
+```
+
+---
+
+
+## 📌 Status do Projeto
+
+Acompanhe o andamento pelo nosso quadro no Trello:
+
+🔗 [Ver Taiga](https://tree.taiga.io/project/gislany-accenture/kanban)
+
+### 🖼️ Quadro Atual:
+
+![Quadro do Taiga](assets/Kanban.png)
+
+---
+
+## 👥 Equipe de Desenvolvimento
+
+| Integrante | Perfil |
+|-----------|--------|
+| <img src="https://github.com/gislanysa.png" width="80" height="80"> | **Gislany Araujo**<br>[@gislanysa](https://github.com/gislanysa) |
+| <img src="https://github.com/jmtmds.png" width="80" height="80"> | **João Marcos Tavares**<br>[@jmtmds](https://github.com/jmtmds) |
+| <img src="https://github.com/JulioCesarMartinsdaCunha.png" width="80" height="80"> | **Júlio César**<br>[@JulioCesarMartinsdaCunha](https://github.com/JulioCesarMartinsdaCunha) |
+| <img src="https://github.com/guihrl.png" width="80" height="80"> | **Guilherme Ramos**<br>[@guihrl](https://github.com/guihrl) |
+| <img src="https://github.com/IanLucas12.png" width="80" height="80"> | **Ian Lucas**<br>[@IanLucas12](https://github.com/IanLucas12) |
+| <img src="https://github.com/kiellzz.png" width="80" height="80"> | **Ezequiel Borges**<br>[@kiellzz](https://github.com/kiellzz) |
