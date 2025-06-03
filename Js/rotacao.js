@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const state = {
         seeds: [],
         terrain: null,
@@ -13,82 +13,91 @@ document.addEventListener('DOMContentLoaded', function() {
         terrainButtons: document.querySelectorAll('.btn-adicionar'),
         timeButtons: document.querySelectorAll('.tempo-button'),
         generateBtn: document.getElementById('generate-rotation'),
-        rotationBody: document.getElementById('rotation-body'),
-        rotationTable: document.getElementById('rotation-table')
+        rotationContainer: document.getElementById('rotation-table-container'),
+        filterButtons: document.querySelectorAll('.filter-btn'),
+        seedGroups: document.querySelectorAll('.family-group')
     };
 
+    const cultureColors = {
+        "Milho": "#80FF80",
+        "Soja": "#8080FF",
+        "Trigo": "#80FF80",
+        "Feijão": "#8080FF",
+        "Cana de Açúcar": "#80FF80",
+        "Arroz": "#80FF80",
+        "Tomate": "#F03218",
+        "Batata": "#F03218",
+        "Banana": "#F0D301",
+        "Café": "#6B270A",
+        "Laranja": "#E15E00",
+        "Algodão": "#FFFFFF",
+        "Descanso": "#F0E6ED"
+    };
 
-    elements.timeButtons.forEach(btn => {
-        btn.dataset.originalText = btn.textContent;
-    });
-    elements.terrainButtons.forEach(btn => {
-        btn.dataset.originalText = btn.textContent;
-    });
+    function initEventListeners() {
+        elements.addButtons.forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                handleSeedSelection(event);
+            });
+        });
 
-   
-    elements.addButtons.forEach(btn => {
-        btn.addEventListener('click', handleSeedSelection);
-    });
+        elements.terrainButtons.forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                handleTerrainSelection(event);
+            });
+        });
 
-    elements.terrainButtons.forEach(btn => {
-        btn.addEventListener('click', handleTerrainSelection);
-    });
+        elements.timeButtons.forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                handleTimeSelection(event);
+            });
+        });
 
-    elements.timeButtons.forEach(btn => {
-        btn.addEventListener('click', handleTimeSelection);
-    });
+        elements.generateBtn.addEventListener('click', function () {
+            generateRotationTable();
+        });
 
-    elements.generateBtn.addEventListener('click', generateRotationTable);
+        elements.filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const family = button.dataset.family;
+                applyFilter(family);
+            });
+        });
+    }
 
-    
     function handleSeedSelection(event) {
-        const button = event.target;
+        const button = event.currentTarget;
         const card = button.closest('.seed-card');
+        if (!card) return;
+
         const family = card.dataset.family;
         const name = card.querySelector('h4').textContent;
         const seedId = card.id;
 
-     
         if (button.classList.contains('selected')) {
-            removeSeedSelection(seedId, family, button);
-            return;
+            state.seeds = state.seeds.filter(seed => seed.id !== seedId);
+            state.selectedFamilies.delete(family);
+            button.textContent = 'Adicionar';
+            button.classList.remove('selected');
+            enableOtherSeedsFromFamily(family);
+        } else {
+            if (state.seeds.length >= 4) {
+                alert('Você só pode selecionar no máximo 4 sementes!');
+                return;
+            }
+
+            if (state.selectedFamilies.has(family)) {
+                alert('Você já selecionou uma semente desta família botânica!');
+                return;
+            }
+
+            state.seeds.push({ name, family, id: seedId });
+            state.selectedFamilies.add(family);
+            button.textContent = 'Selecionada';
+            button.classList.add('selected');
+            disableOtherSeedsFromFamily(family, seedId);
         }
 
-        
-        if (state.seeds.length >= 3) {
-            alert('Você só pode selecionar no máximo 3 sementes!');
-            return;
-        }
-
-        if (state.selectedFamilies.has(family)) {
-            alert('Você já selecionou uma semente desta família botânica!');
-            return;
-        }
-
-       
-        state.seeds.push({ name, family, id: seedId });
-        state.selectedFamilies.add(family);
-
-        
-        button.textContent = 'Selecionada';
-        button.classList.add('selected');
-
-       
-        disableOtherSeedsFromFamily(family, seedId);
-        updateGenerateButton();
-    }
-
-    function removeSeedSelection(seedId, family, button) {
-        
-        state.seeds = state.seeds.filter(seed => seed.id !== seedId);
-        state.selectedFamilies.delete(family);
-
-        
-        button.textContent = 'Adicionar';
-        button.classList.remove('selected');
-
-        
-        enableOtherSeedsFromFamily(family);
         updateGenerateButton();
     }
 
@@ -114,171 +123,271 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    
     function handleTerrainSelection(event) {
-        const button = event.target;
+        const button = event.currentTarget;
         const card = button.closest('.terreno-card');
+        if (!card) return;
+
         const name = card.querySelector('h3').textContent;
         const terrainId = card.id || name.replace(/\s+/g, '-').toLowerCase();
 
-       
         if (button.classList.contains('selected')) {
             state.terrain = null;
-            button.textContent = button.dataset.originalText || 'Adicionar';
+            button.textContent = 'Adicionar';
             button.classList.remove('selected');
-            
-            
             elements.terrainButtons.forEach(btn => {
                 btn.disabled = false;
-                btn.classList.remove('disabled');
-                btn.textContent = btn.dataset.originalText || 'Adicionar';
+                btn.classList.remove('disabled', 'selected');
+                btn.textContent = 'Adicionar';
             });
-            
-            updateGenerateButton();
-            return;
+        } else {
+            elements.terrainButtons.forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn !== button) {
+                    btn.disabled = true;
+                    btn.classList.add('disabled');
+                    btn.textContent = 'Indisponível';
+                }
+            });
+
+            state.terrain = { name, id: terrainId };
+            button.textContent = 'Selecionado';
+            button.classList.add('selected');
         }
-
-        
-        elements.terrainButtons.forEach(btn => {
-            btn.classList.remove('selected');
-        });
-
-        
-        state.terrain = { name, id: terrainId };
-        button.textContent = 'Selecionado';
-        button.classList.add('selected');
-
-        
-        elements.terrainButtons.forEach(btn => {
-            if (btn !== button) {
-                btn.disabled = true;
-                btn.classList.add('disabled');
-                btn.style.cursor = 'not-allowed';
-                btn.textContent = 'Indisponível';
-            }
-        });
 
         updateGenerateButton();
     }
 
-    
     function handleTimeSelection(event) {
-    const button = event.target;
-    const time = button.dataset.originalText || button.textContent; // Pega o texto original
+        const button = event.currentTarget;
+        const time = button.textContent.trim();
 
-    // Se já está selecionado, desseleciona
-    if (button.classList.contains('selected')) {
-        state.time = null;
-        button.classList.remove('selected');
-        
-        // Reativa outros botões
-        elements.timeButtons.forEach(btn => {
-            btn.disabled = false;
-            btn.classList.remove('disabled');
-        });
-        
-        updateGenerateButton();
-        return;
-    }
+        if (button.classList.contains('selected')) {
+            state.time = null;
+            button.classList.remove('selected');
+            elements.timeButtons.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('disabled', 'selected');
+            });
+        } else {
+            elements.timeButtons.forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn !== button) {
+                    btn.disabled = true;
+                    btn.classList.add('disabled');
+                }
+            });
 
-    // Desseleciona todos primeiro
-    elements.timeButtons.forEach(btn => {
-        btn.classList.remove('selected');
-    });
-
-    // Seleciona o atual
-    state.time = time;
-    button.classList.add('selected');
-
-    // Desativa outros botões
-    elements.timeButtons.forEach(btn => {
-        if (btn !== button) {
-            btn.disabled = true;
-            btn.classList.add('disabled');
+            state.time = time;
+            button.classList.add('selected');
         }
-    });
 
-    updateGenerateButton();
-}
+        updateGenerateButton();
+    }
 
     function updateGenerateButton() {
         const canGenerate = state.seeds.length > 0 && state.terrain && state.time;
         elements.generateBtn.disabled = !canGenerate;
-        
-        
-        if (canGenerate) {
-            elements.generateBtn.classList.add('active');
-        } else {
-            elements.generateBtn.classList.remove('active');
-        }
+        elements.generateBtn.classList.toggle('active', canGenerate);
     }
 
     function generateRotationTable() {
-    if (state.seeds.length !== 3 || !state.terrain || !state.time) {
-        alert('Por favor, selecione 3 sementes, um terreno e o tempo!');
-        return;
-    }
-
-    const totalMonths = state.time.includes('ano') ? parseInt(state.time) * 12 : parseInt(state.time);
-    const monthsPerStage = Math.floor(totalMonths / 3); // 3 culturas
-
-    const lotes = 3;
-    const tableHTML = [];
-    const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-
-    // Limpa tabela
-    elements.rotationBody.innerHTML = '';
-
-    // Cabeçalho dinâmico: Lote | Jan | Fev | ...
-    const headerRow = document.createElement('tr');
-    headerRow.innerHTML = `<th>Lote</th>`;
-    for (let i = 0; i < totalMonths; i++) {
-        headerRow.innerHTML += `<th>${monthNames[i % 12]}</th>`;
-    }
-
-    // Substitui thead pelo novo cabeçalho
-    elements.rotationTable.querySelector('thead').innerHTML = '';
-    elements.rotationTable.querySelector('thead').appendChild(headerRow);
-
-    // Gera linhas por lote com rotação
-    for (let lote = 0; lote < lotes; lote++) {
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>Lote ${lote + 1}</td>`;
-        for (let i = 0; i < 3; i++) {
-            const seedIndex = (i + lote) % 3;
-            for (let j = 0; j < monthsPerStage; j++) {
-                row.innerHTML += `<td class="culture" style="background-color:${getColorForCulture(state.seeds[seedIndex].name)}">${state.seeds[seedIndex].name}</td>`;
-            }
+        if (state.seeds.length === 0 || !state.terrain || !state.time) {
+            alert('Por favor, selecione pelo menos uma semente, um terreno e o tempo!');
+            return;
         }
-        elements.rotationBody.appendChild(row);
+
+        let months;
+        switch (state.time) {
+            case "6 meses": months = 6; break;
+            case "1 ano": months = 12; break;
+            case "2 anos": months = 24; break;
+            default: months = 6;
+        }
+
+        const terrenoId = state.terrain.id.replace('terreno-', '');
+        let numTalhoes;
+        switch (terrenoId) {
+            case '1': numTalhoes = 3; break;
+            case '2': numTalhoes = 5; break;
+            case '3': numTalhoes = 6; break;
+            default: numTalhoes = 3;
+        }
+
+        const matrizRotacao = generateRandomRotation(numTalhoes, months, state.seeds);
+
+        const table = document.createElement('table');
+        table.className = 'rotation-table';
+
+        const thead = document.createElement('thead');
+        
+        const headerRow = document.createElement('tr');
+        headerRow.appendChild(document.createElement('th'));
+
+        for (let i = 0; i < months; i++) {
+            const th = document.createElement('th');
+            th.textContent = `Mês ${i + 1}`;
+            headerRow.appendChild(th);
+        }
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+
+        matrizRotacao.forEach((talhao, index) => {
+            const row = document.createElement('tr');
+            const th = document.createElement('th');
+            th.textContent = `Talhão ${index + 1}`;
+            row.appendChild(th);
+
+            talhao.forEach((cultura, monthIndex) => {
+                const td = document.createElement('td');
+                td.textContent = cultura;
+                td.style.backgroundColor = cultureColors[cultura] || '#f8f9fa';
+                td.style.color = '#000000';
+                td.style.fontWeight = '500';
+                td.title = `Talhão ${index + 1}, Mês ${monthIndex + 1}: ${cultura}`;
+                row.appendChild(td);
+            });
+
+            tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+
+        elements.rotationContainer.innerHTML = '';
+        elements.rotationContainer.appendChild(table);
+
+        const legend = createLegend();
+        elements.rotationContainer.appendChild(legend);
     }
 
-    elements.rotationTable.style.display = 'table';
-}
+    const INITIAL_NO_DESCANSO_MONTHS = 3;
 
-function getColorForCulture(name) {
-    const cores = {
-        'Milho': '#00FF00',
-        'Arroz': '#00FF00',
-        'Cana de Açúcar': '#00FF00',
-        'Trigo': '#00FF00',
-        'Soja': '#0000FF',
-        'Feijão': '#0000FF',
-        'Tomate': '#FF0000',
-        'Batata': '#FF0000',
-        'Banana': '#FFFF00',
-        'Algodão': '#FFFFFF',
-        'Café': '#8B4513',
-        'Laranja': '#FFA500'
-        // adicione mais conforme suas sementes
+    const CULTURE_WEIGHTS = {
+        DEFAULT: 10,
+        DESCANSO: 5
     };
-    return cores[name] || '#e2e8f0'; // cor padrão caso não encontre
-}
 
-    function formatDate(date) {
-        return date.toLocaleDateString('pt-BR', {
-            month: '2-digit',
-            year: 'numeric'
-        }).replace('/', '/');
+    function getRandomCultureWithWeights(cultures, weights) {
+        const total = weights.reduce((a, b) => a + b, 0);
+        const random = Math.random() * total;
+        let sum = 0;
+
+        for (let i = 0; i < cultures.length; i++) {
+            sum += weights[i];
+            if (random <= sum) return cultures[i];
+        }
+
+        return cultures[cultures.length - 1];
     }
+
+    function generateRandomRotation(numTalhoes, numMeses, selectedSeeds) {
+        const matrizRotacao = [];
+        const regularCultures = selectedSeeds.map(seed => seed.name);
+        const allCultures = [...regularCultures, "Descanso"];
+        const MAX_CONSECUTIVE_REGULAR = 3;
+        const MAX_CONSECUTIVE_DESCANSO = 1;
+
+        for (let t = 0; t < numTalhoes; t++) {
+            const talhao = [];
+            let lastCulture = null;
+            let consecutiveCount = 0;
+
+            for (let m = 0; m < numMeses; m++) {
+                // Descanso obrigatório a cada 6 meses
+                if (m > 0 && m % 6 === 0) {
+                    if (lastCulture === "Descanso") {
+                        const available = regularCultures.filter(c => c !== lastCulture);
+                        const chosenCulture = available[Math.floor(Math.random() * available.length)];
+                        talhao.push(chosenCulture);
+                        lastCulture = chosenCulture;
+                        consecutiveCount = 1;
+                    } else {
+                        talhao.push("Descanso");
+                        lastCulture = "Descanso";
+                        consecutiveCount = 1;
+                    }
+                    continue;
+                }
+
+                let availableCultures;
+                if (lastCulture === "Descanso" && consecutiveCount >= MAX_CONSECUTIVE_DESCANSO) {
+                    availableCultures = allCultures.filter(c => c !== "Descanso");
+                } else if (lastCulture !== "Descanso" && consecutiveCount >= MAX_CONSECUTIVE_REGULAR) {
+                    availableCultures = allCultures.filter(c => c !== lastCulture);
+                } else {
+                    availableCultures = [...allCultures];
+                }
+
+                if (m < INITIAL_NO_DESCANSO_MONTHS) {
+                    availableCultures = availableCultures.filter(c => c !== "Descanso");
+                }
+
+                if (availableCultures.length === 0) {
+                    availableCultures = regularCultures.length > 0 ? [...regularCultures] : ["Descanso"];
+                }
+
+                const weights = availableCultures.map(c =>
+                    c === "Descanso" ? CULTURE_WEIGHTS.DESCANSO : CULTURE_WEIGHTS.DEFAULT
+                );
+
+                const chosenCulture = getRandomCultureWithWeights(availableCultures, weights);
+
+                if (chosenCulture === lastCulture) {
+                    consecutiveCount++;
+                } else {
+                    consecutiveCount = 1;
+                }
+
+                talhao.push(chosenCulture);
+                lastCulture = chosenCulture;
+            }
+
+            matrizRotacao.push(talhao);
+        }
+
+        return matrizRotacao;
+    }
+
+    function createLegend() {
+        const legend = document.createElement('div');
+        legend.className = 'rotation-legend';
+        legend.innerHTML = '<h4>Legenda:</h4><div class="legend-items"></div>';
+
+        const itemsContainer = legend.querySelector('.legend-items');
+
+        state.seeds.forEach(seed => {
+            const item = document.createElement('div');
+            item.className = 'legend-item';
+            item.innerHTML = `
+                <span class="legend-color" style="background-color: ${cultureColors[seed.name] || '#f8f9fa'}"></span>
+                <span class="legend-name">${seed.name}</span>
+            `;
+            itemsContainer.appendChild(item);
+        });
+
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+            <span class="legend-color" style="background-color: ${cultureColors["Descanso"]}"></span>
+            <span class="legend-name">Descanso</span>
+        `;
+        itemsContainer.appendChild(item);
+
+        return legend;
+    }
+
+    function applyFilter(family) {
+        elements.filterButtons.forEach(btn => btn.classList.remove('active'));
+        const activeButton = document.querySelector(`[data-family="${family}"]`);
+        if (activeButton) activeButton.classList.add('active');
+
+        elements.seedGroups.forEach(group => {
+            group.style.display = (family === 'all' || group.dataset.family === family) ? 'block' : 'none';
+        });
+    }
+
+    initEventListeners();
+    applyFilter('all');
 });

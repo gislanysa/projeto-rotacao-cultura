@@ -47,7 +47,7 @@
   </div>
   <section id="sementes" class="content-section">
     <h2>Escolha suas Sementes</h2>
-    <p class="subtitulo">Filtre por famílias botânicas e selecione até 3 sementes por família</p>
+    <p class="subtitulo">Filtre por famílias botânicas e selecione até 4 sementes por família</p>
 
     <div class="seed-filters">
       <button class="filter-btn active" data-family="all">Todas</button>
@@ -304,36 +304,38 @@
     <main>
       <h2>Escolha seu Terreno</h2>
       <section class="terreno-lista">
-        <article class="terreno-card">
+
+        <article class="terreno-card" data-terreno="1">
           <img src="assets/terreno1.jpg" alt="Terreno 1">
           <div class="card-content">
             <h3>Terreno 1</h3>
-            <p>Solo Argiloso</p>
+            <p>3 Talhões</p>
             <div class="card-buttons">
               <button class="btn-adicionar">Adicionar</button>
             </div>
           </div>
         </article>
 
-        <article class="terreno-card">
-          <img src="assets/terreno2.jpg" alt="Terreno 2">
+        <article class="terreno-card" data-terreno="2">
+          <img src="assets/terreno3.jpg" alt="Terreno 2">
           <div class="card-content">
             <h3>Terreno 2</h3>
-            <p>Solo Arenoso</p>
+            <p>5 Talhões</p>
             <div class="card-buttons">
               <button class="btn-adicionar">Adicionar</button>
             </div>
         </article>
 
-        <article class="terreno-card">
-          <img src="assets/terreno3.jpg" alt="Terreno 3">
+         <article class="terreno-card" data-terreno="3">
+          <img src="assets/terreno2.jpg" alt="Terreno 3">
           <div class="card-content">
             <h3>Terreno 3</h3>
-            <p>Solo Franco</p>
+            <p>6 Talhões</p>
             <div class="card-buttons">
               <button class="btn-adicionar">Adicionar</button>
             </div>
         </article>
+
       </section>
     </main>
   </section>
@@ -344,9 +346,9 @@
     <p class="subtitulo">Selecione o tempo desejado para sua rotação de culturas</p>
 
     <div class="tempo-container">
-      <button class="tempo-button">6 meses</button>
-      <button class="tempo-button">1 ano</button>
-      <button class="tempo-button">2 anos</button>
+      <button class="tempo-button" data-tempo="6 meses">6 meses</button>
+      <button class="tempo-button" data-tempo="1 ano">1 ano</button>
+      <button class="tempo-button" data-tempo="2 anos">2 anos</button>
     </div>
   </section>
 
