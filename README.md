@@ -89,12 +89,22 @@ git push origin sua-branch
 
 Principais telas:
 
-```markdown  
-![Tela de Cadastro](assets/tela-cadastro.png)
+### Tela de Login:
+
+![Tela de Login](assets/tela-Login.png)
+
+### Sementes:
+
 ![Tela Sementes](assets/tela-Sementes.png)
+
+### Tela Responsiva:
+
 ![Tela Responsiva](assets/tela-Responsiva.png)
+
+### Saiba Mais:
+
 ![Tela Saiba Mais](assets/tela-SaibaMais.png)
-```
+
 
 ---
 
