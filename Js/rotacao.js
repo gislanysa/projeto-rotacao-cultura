@@ -19,19 +19,19 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const cultureColors = {
-        "Milho": "#00FF00",
-        "Soja": "#0000FF",
-        "Trigo": "#00FF00",
-        "Feijão": "#0000FF",
-        "Cana de Açúcar": "#00FF00",
-        "Arroz": "#00FF00",
-        "Tomate": "#FF0000",
-        "Batata": "#FF0000",
-        "Banana": "#FFFF00",
-        "Café": "#8B4513",
-        "Laranja": "#FFA500",
+        "Milho": "#80FF80",
+        "Soja": "#8080FF",
+        "Trigo": "#80FF80",
+        "Feijão": "#8080FF",
+        "Cana de Açúcar": "#80FF80",
+        "Arroz": "#80FF80",
+        "Tomate": "#F03218",
+        "Batata": "#F03218",
+        "Banana": "#F0D301",
+        "Café": "#6B270A",
+        "Laranja": "#E15E00",
         "Algodão": "#FFFFFF",
-        "Descanso": "#D7C4CE"
+        "Descanso": "#F0E6ED"
     };
 
     function initEventListeners() {
